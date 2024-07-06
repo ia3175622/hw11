@@ -14,10 +14,10 @@ $(document).ready(function () {
       "Authorization": "Token " + token
     }
   })
-  .then(response => response.text())
+  .then(response => response.json())
   .then(result => {
     console.log(result);
-    document.getElementById("result").innerHTML = (result);
+    document.getElementById("result").innerHTML = (result.location.value);
   })
   .catch(error => console.log("error", error));
   });
